@@ -1,7 +1,5 @@
 'use strict'
 
-const path = require('path')
-const express = require('express')
 const compression = require('compression')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
@@ -10,13 +8,12 @@ const helmet = require('helmet')
 const cors = require('cors')
 const morgan = require('morgan')
 const expressWinston = require('express-winston')
-const errorhandler = require('errorhandler')
+const errorHandler = require('api-error-handler')
 const logger = require('./logger')
 const api = require('../api')
-const config = require('../config')
 
 module.exports = function (app) {
-  // middlewares
+  /* middlewares */
   app.use(compression())
   app.use(bodyParser.urlencoded({ extended: true }))
   app.use(bodyParser.json())
@@ -24,19 +21,20 @@ module.exports = function (app) {
   app.use(methodOverride())
   app.use(helmet())
   app.use(cors())
-  app.use(express.static(path.join(config.root, 'public')))
 
-  // logger
+  /* logger */
   app.get('env') === 'development'
     ? app.use(morgan('dev'))
     : app.use(expressWinston.logger({ winstonInstance: logger }))
 
-  // routes
+  /* routes */
   app.use('/api', api)
-  app.use('/*', (req, res, next) => res.status(404).end('Not Found'))
+  app.use('/*', (req, res) => res.status(404).end('Not Found'))
 
-  // error handler
+  /* error handlers */
   app.get('env') === 'development'
-    ? app.use(errorhandler())
+    ? app.use((err, req, res, next) => logger.error(err) || next(err))
     : app.use(expressWinston.errorLogger({ winstonInstance: logger }))
+
+  app.use(errorHandler())
 }
