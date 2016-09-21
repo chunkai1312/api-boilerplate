@@ -37,25 +37,25 @@
 
 ### Setup
 
-```
+```sh
 $ npm install
 ```
 
 ### Developing
 
-```
+```sh
 $ npm run dev
 ```
 
 ### Running
 
-```
+```sh
 $ npm start
 ```
 
 ### Testing
 
-```
+```sh
 $ npm test
 ```
 
