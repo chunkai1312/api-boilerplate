@@ -10,6 +10,29 @@
 - Use [nodemon](https://github.com/remy/nodemon) for watching and restarting
 - Use [Mocha](https://github.com/mochajs/mocha) as test framework
 
+## Structure
+
+```
+.
+├── api
+│   ├── controllers  # api implementations
+|   ├── middlewares  # middleware implementations
+│   ├── models       # database schema definitions
+│   ├── routes       # router definitions
+│   └── services     # standalone services
+├── config           # app configurations
+│   ├── env          # environment variable definitions
+│   ├── express.js   # express setup
+│   ├── index.js     # configuration variable loader
+│   ├── local.js     # local variable definitions
+│   ├── logger.js    # winston logger transport settings
+│   └── mongoose.js  # mongoose connection handler
+├── logs             # logging files
+├── test             # testing scripts
+├── app.js           # entry
+└── package.json
+```
+
 ## Usage
 
 ### Setup
