@@ -12,7 +12,7 @@
 
 ## Structure
 
-```
+```sh
 .
 ├── api
 │   ├── controllers  # api implementations
