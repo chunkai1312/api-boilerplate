@@ -13,7 +13,7 @@ describe('Thing API:', () => {
         .get('/api/things')
         .expect('Content-Type', /json/)
         .expect(200)
-        .then(res => expect(res.body).to.be.instanceOf(Array))
+        .then(res => expect(res.body).to.be.an('array'))
     })
   })
 
@@ -28,9 +28,9 @@ describe('Thing API:', () => {
         .expect('Content-Type', /json/)
         .expect(201)
         .then(res => {
-          expect(res.body).to.have.property('id')
-          expect(res.body).to.have.property('name').that.equal('New Thing')
-          expect(res.body).to.have.property('info').that.equal('This is the brand new thing!!!')
+          expect(res.body.id).to.exist
+          expect(res.body.name).to.equal('New Thing')
+          expect(res.body.info).to.equal('This is the brand new thing!!!')
           thing = res.body
         })
     })
