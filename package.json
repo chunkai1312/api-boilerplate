@@ -1,7 +1,7 @@
 {
-  "name": "express-starter",
+  "name": "api-seed",
   "version": "1.0.0",
-  "description": "A seed project for building web applications using Express with MongoDB",
+  "description": "A seed project for building api server using Express with MongoDB",
   "main": "app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node app.js",
