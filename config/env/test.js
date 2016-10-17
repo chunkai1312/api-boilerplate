@@ -2,7 +2,7 @@
 
 module.exports = {
   mongoDB: {
-    uri: 'mongodb://localhost:27017/express-starter-test',
+    uri: 'mongodb://localhost:27017/api-seed',
     options: {}
   }
 }
