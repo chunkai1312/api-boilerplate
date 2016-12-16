@@ -1,7 +1,7 @@
 'use strict'
 
 const express = require('express')
-const thing = require('./routes/thing')
+const thing = require('./thing')
 const router = express.Router()
 
 router.use('/things', thing)

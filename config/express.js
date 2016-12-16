@@ -10,7 +10,7 @@ const morgan = require('morgan')
 const expressWinston = require('express-winston')
 const errorHandler = require('api-error-handler')
 const logger = require('./logger')
-const api = require('../api')
+const api = require('../api/routes')
 
 module.exports = function (app) {
   /* middlewares */
