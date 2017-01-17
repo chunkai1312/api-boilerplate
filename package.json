@@ -6,8 +6,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "build": "babel src -d dist",
     "test": "cross-env NODE_ENV=test mocha --compilers js:babel-register --require babel-polyfill test/**/*.test.js",
-    "lint": "eslint app.js app config test"
+    "lint": "eslint index.js src test"
   },
   "author": "Chun-Kai Wang <chunkai1312@gmail.com>",
   "license": "MIT",
