@@ -1,10 +1,10 @@
 import { Router } from 'express'
-import { notfound } from '../middlewares'
+import { notFound } from '../middlewares'
 import api from './api'
 
 const router = Router()
 
 router.use('/api', api())
-router.use('*', notfound())
+router.use('/*', notFound())
 
 export default () => router
