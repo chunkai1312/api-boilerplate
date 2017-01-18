@@ -2,12 +2,13 @@
   "name": "api-seed",
   "version": "1.0.0",
   "description": "A seed project for building api server using Express with MongoDB",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "prebuild": "rimraf dist",
     "build": "babel src -d dist",
-    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-register --require babel-polyfill test/**/*.test.js",
+    "test": "cross-env NODE_ENV=test nyc mocha --compilers js:babel-register --require babel-polyfill test/**/*.test.js",
     "lint": "eslint app.js app config test"
   },
   "author": "Chun-Kai Wang <chunkai1312@gmail.com>",
@@ -47,6 +48,8 @@
     "eslint-plugin-standard": "^2.0.1",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
+    "nyc": "^10.1.2",
+    "rimraf": "^2.5.4",
     "supertest": "^2.0.1"
   }
 }
