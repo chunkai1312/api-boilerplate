@@ -1,8 +1,6 @@
-'use strict'
+import mongoose, { Schema } from 'mongoose'
 
-const mongoose = require('mongoose')
-
-const ThingSchema = new mongoose.Schema({
+const ThingSchema = new Schema({
   name: String,
   info: String,
   active: Boolean
@@ -18,4 +16,4 @@ ThingSchema.set('toJSON', {
   }
 })
 
-module.exports = mongoose.model('Thing', ThingSchema)
+export default mongoose.model('Thing', ThingSchema)
