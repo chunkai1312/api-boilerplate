@@ -3,4 +3,6 @@ npm-debug.log
 dist
 logs/*
 !logs/.gitkeep
+coverage
+.nyc_output
 .DS_Store
