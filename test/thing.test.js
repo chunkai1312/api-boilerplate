@@ -1,8 +1,6 @@
-'use strict'
-
-const expect = require('chai').expect
-const request = require('supertest')
-const app = require('../app')
+import {expect} from 'chai'
+import request from 'supertest'
+import app from '../src/app'
 
 describe('Thing API:', () => {
   let thing
