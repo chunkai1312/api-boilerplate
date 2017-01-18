@@ -1,11 +1,10 @@
-'use strict'
+import mongoose from 'mongoose'
+import logger from './logger'
+import config from '../config'
 
-const mongoose = require('mongoose')
-const logger = require('./logger')
-const config = require('../config')
 mongoose.Promise = global.Promise
 
-module.exports = function () {
+export default function connectMongoDB () {
   mongoose.connect(config.mongoDB.uri, config.mongoDB.options)
 
   mongoose.connection

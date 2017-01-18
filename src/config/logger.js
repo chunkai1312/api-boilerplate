@@ -1,9 +1,7 @@
-'use strict'
-
-const path = require('path')
-const winston = require('winston')
-const DailyRotateFile = require('winston-daily-rotate-file')
-const config = require('../config')
+import path from 'path'
+import winston from 'winston'
+import DailyRotateFile from 'winston-daily-rotate-file'
+import config from '../config'
 
 const logger = new winston.Logger({
   transports: (config.env === 'development')
@@ -41,4 +39,4 @@ const logger = new winston.Logger({
   exitOnError: false
 })
 
-module.exports = logger
+export default logger
