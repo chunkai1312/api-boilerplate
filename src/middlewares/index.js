@@ -7,13 +7,14 @@ import helmet from 'helmet'
 import methodOverride from 'method-override'
 import { compose } from 'compose-middleware'
 import expressWinston from 'express-winston'
+import config from '../../config'
 import winstonInstance from '../../config/logger'
 
-const logger = (process.env.NODE_ENV === 'production')
-  ? () => expressWinston.logger({ winstonInstance })
-  : () => morgan('dev')
+const logger = (config.env === 'development')
+  ? () => morgan('dev')
+  : () => expressWinston.logger({ winstonInstance })
 
-const middlewares = () => compose([
+const middlewares = [
   logger(),
   compression(),
   bodyParser.urlencoded({ extended: false }),
@@ -22,8 +23,10 @@ const middlewares = () => compose([
   cors(),
   helmet(),
   methodOverride()
-])
+]
 
-export errorhandler from 'api-error-handler'
+if (config.env === 'test') middlewares.shift()
+
+export errorhandler from './errorhandler'
 export notfound from './notfound'
-export default middlewares
+export default () => compose(middlewares)
