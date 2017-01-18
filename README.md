@@ -14,22 +14,21 @@
 
 ```
 .
-├── config           # app configurations
-│   ├── env          # environment variable definitions
-│   ├── index.js     # configuration variable loader
-│   ├── local.js     # local variable definitions
-│   ├── logger.js    # winston logger transport settings
-│   └── mongoose.js  # mongoose connection handler
 ├── src
-│   ├── controllers  # api implementations
-|   ├── middlewares  # middleware implementations
-│   ├── models       # database schema definitions
-│   ├── routes       # router definitions
-│   ├── routes       # standalone services
-│   └── app.js       # express instance
-├── logs             # logging files
-├── test             # testing scripts
-├── index.js         # entry
+│   ├── config           # app configurations
+│   │   ├── env          # environment variable definitions
+│   │   ├── index.js     # configuration variables
+│   │   ├── logger.js    # winston logger transport settings
+│   │   └── mongoose.js  # mongoose connection handler
+│   ├── controllers      # api implementations
+|   ├── middlewares      # middleware implementations
+│   ├── models           # database schema definitions
+│   ├── routes           # router definitions
+│   ├── routes           # standalone services
+│   └── app.js           # express instance
+├── logs                 # logging files
+├── test                 # testing scripts
+├── index.js             # entry
 └── package.json
 ```
 
