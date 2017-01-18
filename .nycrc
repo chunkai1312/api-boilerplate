@@ -1,3 +1,4 @@
  {
-    "include": ["src/**/*.js"]
+    "include": ["src/**/*.js"],
+    "exclude": ["src/config/**/*.js"]
   }
