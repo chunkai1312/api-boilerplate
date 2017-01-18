@@ -20,7 +20,7 @@
 │   ├── local.js     # local variable definitions
 │   ├── logger.js    # winston logger transport settings
 │   └── mongoose.js  # mongoose connection handler
-├── api
+├── src
 │   ├── controllers  # api implementations
 |   ├── middlewares  # middleware implementations
 │   ├── models       # database schema definitions
@@ -45,6 +45,12 @@ $ npm install
 
 ```
 $ npm run dev
+```
+
+### Building
+
+```
+$ npm run build
 ```
 
 ### Running
