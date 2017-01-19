@@ -5,12 +5,11 @@ import middlewares, { errorHandler } from './middlewares'
 import routes from './routes'
 import connectMongoDB from './config/mongoose'
 
-const app = express()
-
-app.use(middlewares())
-app.use(routes())
-app.use(errorHandler())
-
 connectMongoDB()
+
+const app = express()
+  .use(middlewares())
+  .use(routes())
+  .use(errorHandler())
 
 export default app
