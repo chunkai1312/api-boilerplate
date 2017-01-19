@@ -1,15 +1,9 @@
-import path from 'path'
 import { merge } from 'lodash'
+import config from './config'
 import development from './env/development'
 import test from './env/test'
 import staging from './env/staging'
 import production from './env/production'
-
-const config = {
-  env: process.env.NODE_ENV,
-  port: process.env.PORT,
-  root: path.normalize(`${__dirname}/../..`)
-}
 
 export default {
   development: merge({}, config, development),
