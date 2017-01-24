@@ -3,7 +3,12 @@
   "plugins": ["add-module-exports"],
   "env": {
     "test": {
-      "plugins": ["istanbul"]
+      "plugins": [
+        ["istanbul", {
+          "include": ["src"],
+          "exclude": ["src/config"]
+        }]
+      ]
     }
   }
 }
