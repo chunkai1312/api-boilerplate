@@ -1,1 +1,1 @@
-export * as thing from './thing'
+export * as todo from './todo'

@@ -1,12 +1,11 @@
 import mongoose, { Schema } from 'mongoose'
 
-const ThingSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+const TodoSchema = new Schema({
+  title: { type: String },
+  completed: { type: Boolean, default: false }
 }, { timestamps: true })
 
-ThingSchema.set('toJSON', {
+TodoSchema.set('toJSON', {
   transform: (doc, ret, options) => {
     ret.id = ret._id
     delete ret._id
@@ -16,4 +15,4 @@ ThingSchema.set('toJSON', {
   }
 })
 
-export default mongoose.model('Thing', ThingSchema)
+export default mongoose.model('Todo', TodoSchema)
