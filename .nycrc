@@ -1,4 +1,4 @@
- {
-    "include": ["src/**/*.js"],
-    "exclude": ["src/config/**/*.js"]
-  }
+{
+  "sourceMap": false,
+  "instrument": false
+}
