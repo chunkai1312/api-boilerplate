@@ -4,7 +4,7 @@ import DailyRotateFile from 'winston-daily-rotate-file'
 import config from '../config'
 
 const logger = new winston.Logger({
-  transports: (config.env === 'development')
+  transports: (config.env === 'development' || config.env === 'test')
     ? [
       new winston.transports.Console({
         level: 'debug',
