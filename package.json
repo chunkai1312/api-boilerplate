@@ -4,13 +4,12 @@
   "description": "A seed project for building api server using Express with MongoDB",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server.js",
-    "worker": "node worker.js",
-    "dev": "cross-env NODE_ENV=development nodemon server.js",
-    "prebuild": "rimraf dist",
-    "build": "babel src -d dist",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test nyc mocha --compilers js:babel-register test/**/*.test.js",
     "coverage": "nyc report --reporter=text-summary",
+    "prebuild": "rimraf dist",
+    "build": "babel src -d dist",
     "lint": "eslint app.js app config test"
   },
   "author": "Chun-Kai Wang <chunkai1312@gmail.com>",
