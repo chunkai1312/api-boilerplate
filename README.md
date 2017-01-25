@@ -4,6 +4,7 @@
 
 ## Features
 
+- ES6/ES2015 support using [Babel](https://babeljs.io)
 - Use [MongoDB](https://www.mongodb.com/) for the database and [Mongoose](https://github.com/Automattic/mongoose) ODM for schema creation
 - Introduce [co-express](https://github.com/mciparelli/co-express) to enable generators to be used as middlewares
 - Use [winston](https://github.com/winstonjs/winston) for logging errors and events
@@ -24,7 +25,7 @@
 |   ├── middlewares      # middleware implementations
 │   ├── models           # database schema definitions
 │   ├── routes           # router definitions
-│   ├── routes           # standalone services
+│   ├── servies           # standalone services
 │   └── app.js           # express instance
 ├── logs                 # logging files
 ├── test                 # testing scripts
