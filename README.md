@@ -25,7 +25,7 @@
 |   ├── middlewares      # middleware implementations
 │   ├── models           # database schema definitions
 │   ├── routes           # router definitions
-│   ├── servies           # standalone services
+│   ├── servies          # standalone services
 │   └── app.js           # express instance
 ├── logs                 # logging files
 ├── test                 # testing scripts
