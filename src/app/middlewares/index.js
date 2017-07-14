@@ -7,8 +7,8 @@ import helmet from 'helmet'
 import methodOverride from 'method-override'
 import { compose } from 'compose-middleware'
 import expressWinston from 'express-winston'
-import config from '../config'
-import winstonInstance from '../config/logger'
+import config from '../../config'
+import winstonInstance from '../../config/logger'
 
 const logger = (config.env === 'development')
   ? () => morgan('dev')

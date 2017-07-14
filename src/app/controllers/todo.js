@@ -1,5 +1,5 @@
 import error from 'http-errors'
-import { Todo } from '../models'
+import Todo from '../models/todo'
 
 function TodoController (dependencies = {}) {
   const todoController = {}
@@ -46,7 +46,7 @@ function TodoController (dependencies = {}) {
    * DELETE /api/todos/:id
    * Destroy an existing todo by ID.
    */
-  todoController.index = async (req, res) => {
+  todoController.destroy = async (req, res) => {
     const todo = await Todo.findByIdAndRemove(req.params.id)
     if (!todo) throw error(404)
     res.status(204).end()

@@ -3,7 +3,7 @@ import mongooseHidden from 'mongoose-hidden'
 import mongooseDelete from 'mongoose-delete'
 
 const TodoSchema = new Schema({
-  title: { type: String },
+  text: { type: String },
   completed: { type: Boolean, default: false }
 }, { timestamps: true })
 
