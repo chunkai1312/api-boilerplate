@@ -3,8 +3,9 @@ import middlewares, { errorHandler } from './middlewares'
 import routes from './routes'
 
 const app = express()
-  .use(middlewares())
-  .use(routes())
-  .use(errorHandler())
+
+app.use(middlewares())
+app.use(routes())
+app.use(errorHandler())
 
 export default app
