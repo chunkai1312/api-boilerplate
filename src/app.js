@@ -1,6 +1,7 @@
 import express from 'express'
 import middlewares, { errorHandler } from './middlewares'
 import routes from './routes'
+import './config/mongoose'
 
 const app = express()
 
