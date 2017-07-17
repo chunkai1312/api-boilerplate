@@ -3,16 +3,16 @@ import Todo from '../models/todo'
 function TodoRepository (dependencies = { Todo }) {
   const todoRepository = {}
 
-  todoRepository.createClient = (todo) => {
-    return Todo.create(todo)
-  }
-
   todoRepository.getTodos = (query) => {
     return Todo.find(query)
   }
 
   todoRepository.getTodoById = (id) => {
     return Todo.findById(id)
+  }
+
+  todoRepository.createTodo = (todo) => {
+    return Todo.create(todo)
   }
 
   todoRepository.updateTodo = (id, doc) => {
