@@ -30,7 +30,7 @@ function TodoService (dependencies = { todoRepo: TodoRepository() }) {
     return client
   }
 
-  return TodoService
+  return todoService
 }
 
 export default TodoService
