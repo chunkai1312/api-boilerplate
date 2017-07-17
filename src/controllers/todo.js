@@ -1,5 +1,5 @@
 import error from 'http-errors'
-import TodoService from '../services'
+import TodoService from '../services/todo'
 
 function TodoController (dependencies = { todoService: TodoService() }) {
   const { todoService } = dependencies

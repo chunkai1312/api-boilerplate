@@ -28,5 +28,4 @@ const middlewares = [
 if (config.env === 'test') middlewares.shift()
 
 export errorHandler from './errorhandler'
-export notFound from './notfound'
 export default () => compose(middlewares)
