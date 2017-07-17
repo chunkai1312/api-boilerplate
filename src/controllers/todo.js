@@ -1,7 +1,9 @@
 import error from 'http-errors'
-import Todo from '../models/todo'
+import TodoService from '../services'
 
-function TodoController (dependencies = {}) {
+function TodoController (dependencies = { todoService: TodoService() }) {
+  const { todoService } = dependencies
+
   const todoController = {}
 
   /**
@@ -9,7 +11,7 @@ function TodoController (dependencies = {}) {
    * Find all todo.
    */
   todoController.index = async (req, res) => {
-    const todos = await Todo.find()
+    const todos = await todoService.getTodos()
     res.status(200).json(todos)
   }
 
@@ -18,7 +20,7 @@ function TodoController (dependencies = {}) {
    * Create a new todo.
    */
   todoController.create = async (req, res) => {
-    const todo = await Todo.create(req.body)
+    const todo = await todoService.createTodo(res.body)
     res.status(201).json(todo)
   }
 
@@ -27,7 +29,7 @@ function TodoController (dependencies = {}) {
    * Find one todo by ID.
    */
   todoController.show = async (req, res) => {
-    const todo = await Todo.findById(req.params.id)
+    const todo = await todoService.getTodoById(req.params.id)
     if (!todo) throw error(404)
     res.status(200).json(todo)
   }
@@ -37,7 +39,7 @@ function TodoController (dependencies = {}) {
    * Update an existing todo by ID.
    */
   todoController.update = async (req, res) => {
-    const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    const todo = await todoService.updateTodo(req.params.id, req.body)
     if (!todo) throw error(404)
     res.status(200).json(todo)
   }
@@ -47,7 +49,7 @@ function TodoController (dependencies = {}) {
    * Destroy an existing todo by ID.
    */
   todoController.destroy = async (req, res) => {
-    const todo = await Todo.findByIdAndRemove(req.params.id)
+    const todo = await todoService.deleteToto(req.params.id)
     if (!todo) throw error(404)
     res.status(204).end()
   }
