@@ -49,9 +49,9 @@ function TodoController (dependencies = { todoService: TodoService() }) {
    * Destroy an existing todo by ID.
    */
   todoController.destroy = async (req, res) => {
-    const todo = await todoService.deleteToto(req.params.id)
+    const todo = await todoService.deleteTodo(req.params.id)
     if (!todo) throw error(404)
-    res.status(204).end()
+    res.status(200).json(todo)
   }
 
   return todoController
