@@ -1,12 +1,12 @@
 import expressWinston from 'express-winston'
 import httpErrors from 'http-errors-express'
 import { errors } from 'compose-middleware'
-import { errorLogger as winstonInstance } from '../config/logger'
+import logger, { errorLogger as winstonInstance } from '../config/winston'
 import config from '../config'
 
 const errorLogger = (config.env === 'production')
   ? () => expressWinston.errorLogger({ winstonInstance })
-  : () => (err, req, res, next) => winstonInstance.error(err) || next(err)
+  : () => (err, req, res, next) => logger.error(err) || next(err)
 
 const handlers = [
   errorLogger(),

@@ -8,7 +8,7 @@ import methodOverride from 'method-override'
 import { compose } from 'compose-middleware'
 import expressWinston from 'express-winston'
 import config from '../config'
-import { accessLogger as winstonInstance } from '../config/logger'
+import { accessLogger as winstonInstance } from '../config/winston'
 import addRequestId from 'express-request-id'
 
 const logger = (config.env === 'production')
