@@ -15,11 +15,15 @@
 
 ```
 .
+├── bin
+│   └── server.js        # entry
+├── logs                 # logging files
 ├── src
 │   ├── config           # app configurations
 │   │   ├── env          # environment variable definitions
-│   │   ├── index.js     # configuration variables
-│   │   ├── logger.js    # winston logger transport settings
+│   │   ├── index.js     # configuration
+│   │   ├── config.js    # configuration variables definitions
+│   │   ├── winston.js   # winston logger transport settings
 │   │   └── mongoose.js  # mongoose connection handler
 │   ├── controllers      # api implementations
 |   ├── middlewares      # middleware implementations
@@ -27,9 +31,7 @@
 │   ├── routes           # router definitions
 │   ├── servies          # standalone services
 │   └── app.js           # express instance
-├── logs                 # logging files
 ├── test                 # testing scripts
-├── index.js             # entry
 └── package.json
 ```
 
