@@ -12,7 +12,7 @@ import { accessLogger as winstonInstance } from '../config/winston'
 import addRequestId from 'express-request-id'
 
 const logger = (config.env === 'production')
-  ? () => expressWinston.logger({ winstonInstance })
+  ? () => expressWinston.logger({ winstonInstance, dynamicMeta: (req, res) => ({ requestId: req.id }) })
   : () => morgan('dev')
 
 const middlewares = [
