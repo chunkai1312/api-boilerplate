@@ -4,9 +4,8 @@
 
 ## Features
 
-- ES6/ES2015 support using [Babel](https://babeljs.io)
+- ES6/ES2015+ support using [Babel](https://babeljs.io)
 - Use [MongoDB](https://www.mongodb.com/) for the database and [Mongoose](https://github.com/Automattic/mongoose) ODM for schema creation
-- Introduce [co-express](https://github.com/mciparelli/co-express) to enable generators to be used as middlewares
 - Use [winston](https://github.com/winstonjs/winston) for logging errors and events
 - Use [nodemon](https://github.com/remy/nodemon) for watching and restarting
 - Use [Mocha](https://github.com/mochajs/mocha) as test framework
