@@ -2182,6 +2182,10 @@ html-encoding-sniffer@^1.0.1:
   dependencies:
     whatwg-encoding "^1.0.1"
 
+http-errors-express@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/http-errors-express/-/http-errors-express-3.1.0.tgz#8abcbd7ff446f304b7059e7e5c8bb3b377259672"
+
 http-errors@^1.6.1, http-errors@~1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.6.1.tgz#5f8b8ed98aca545656bf572997387f904a722257"
