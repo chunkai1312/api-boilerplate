@@ -19,7 +19,7 @@ function TodoRepository (dependencies = { Todo }) {
     return Todo.findByIdAndUpdate(id, doc, { new: true })
   }
 
-  todoRepository.deleteToto = (id) => {
+  todoRepository.deleteTodo = (id) => {
     return Todo.findById(id)
       .then(todo => todo ? todo.delete() : null)
   }
