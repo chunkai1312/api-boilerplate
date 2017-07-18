@@ -8,11 +8,12 @@ import methodOverride from 'method-override'
 import { compose } from 'compose-middleware'
 import expressWinston from 'express-winston'
 import config from '../config'
-import winstonInstance from '../config/logger'
+import { accessLogger as winstonInstance } from '../config/logger'
+import addRequestId from 'express-request-id'
 
-const logger = (config.env === 'development')
-  ? () => morgan('dev')
-  : () => expressWinston.logger({ winstonInstance })
+const logger = (config.env === 'production')
+  ? () => expressWinston.logger({ winstonInstance })
+  : () => morgan('dev')
 
 const middlewares = [
   logger(),
@@ -22,7 +23,8 @@ const middlewares = [
   cookieParser(),
   cors(),
   helmet(),
-  methodOverride()
+  methodOverride(),
+  addRequestId()
 ]
 
 if (config.env === 'test') middlewares.shift()
