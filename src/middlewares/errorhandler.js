@@ -1,18 +1,19 @@
-import apiErrorHandler from 'api-error-handler'
 import expressWinston from 'express-winston'
+import httpErrors from 'http-errors-express'
 import { errors } from 'compose-middleware'
 import config from '../config'
-import winstonInstance from '../config/logger'
+import { errorLogger as winstonInstance } from '../config/logger'
 
-const errorLogger = (config.env === 'development')
-  ? () => (err, req, res, next) => winstonInstance.error(err) || next(err)
-  : () => expressWinston.errorLogger({ winstonInstance })
+const errorLogger = (config.env === 'production')
+  ? () => expressWinston.errorLogger({ winstonInstance })
+  : () => (err, req, res, next) => winstonInstance.error(err) || next(err)
 
 const handlers = [
   errorLogger(),
-  apiErrorHandler()
+  httpErrors({
+    /* eslint handle-callback-err: 0 */
+    before: (err, req, isExposed, cb) => cb()
+  })
 ]
-
-if (config.env === 'test') handlers.shift()
 
 export default () => errors(handlers)
