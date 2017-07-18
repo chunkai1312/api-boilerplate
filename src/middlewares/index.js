@@ -27,7 +27,5 @@ const middlewares = [
   addRequestId()
 ]
 
-if (config.env === 'test') middlewares.shift()
-
-export errorHandler from './errorhandler'
 export default () => compose(middlewares)
+export errorHandler from './errorhandler'
