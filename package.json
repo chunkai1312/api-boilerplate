@@ -56,6 +56,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^20.0.4",
+    "node-mocks-http": "^1.6.4",
     "nodemon": "^1.11.0",
     "supertest": "^3.0.0"
   }
