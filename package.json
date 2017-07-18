@@ -30,6 +30,7 @@
     "glob": "^7.1.2",
     "helmet": "^3.6.1",
     "http-errors": "^1.6.1",
+    "http-errors-express": "^3.1.0",
     "lodash": "^4.17.4",
     "method-override": "^2.3.9",
     "mongoose": "^4.11.1",
