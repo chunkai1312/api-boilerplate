@@ -4,6 +4,7 @@ import DailyRotateFile from 'winston-daily-rotate-file'
 import config from '../config'
 
 const logger = new winston.Logger({
+  level: 'debug',
   transports: [
     new winston.transports.Console({ colorize: true })
   ]
