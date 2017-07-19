@@ -6,13 +6,13 @@ function TodoService (dependencies = { todoRepo: TodoRepository() }) {
   const todoService = {}
 
   todoService.getTodos = async (query) => {
-    const clients = await todoRepo.getTodos(query)
-    return clients
+    const todo = await todoRepo.getTodos(query)
+    return todo
   }
 
   todoService.getTodoById = async (id) => {
-    const client = await todoRepo.getTodoById(id)
-    return client
+    const todo = await todoRepo.getTodoById(id)
+    return todo
   }
 
   todoService.createTodo = async (data) => {
