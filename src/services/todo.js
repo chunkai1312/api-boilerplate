@@ -21,13 +21,13 @@ function TodoService (dependencies = { todoRepo: TodoRepository() }) {
   }
 
   todoService.updateTodo = async (id, doc) => {
-    const client = await todoRepo.updateTodo(id, doc)
-    return client
+    const todo = await todoRepo.updateTodo(id, doc)
+    return todo
   }
 
   todoService.deleteTodo = async (id) => {
-    const client = await todoRepo.deleteTodo(id)
-    return client
+    const todo = await todoRepo.deleteTodo(id)
+    return todo
   }
 
   return todoService
