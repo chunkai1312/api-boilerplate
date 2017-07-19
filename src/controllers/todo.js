@@ -20,7 +20,7 @@ function TodoController (dependencies = { todoService: TodoService() }) {
    * Create a new todo.
    */
   todoController.create = async (req, res) => {
-    const todo = await todoService.createTodo(res.body)
+    const todo = await todoService.createTodo(req.body)
     res.status(201).json(todo)
   }
 
