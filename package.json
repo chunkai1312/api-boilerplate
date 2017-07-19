@@ -1,8 +1,7 @@
 {
-  "name": "api-seed",
-  "version": "1.0.0",
-  "description": "A seed project for building api server using Express with MongoDB",
-  "main": "index.js",
+  "name": "api-boilerplate",
+  "version": "0.0.0",
+  "description": "A boilerplate for building api services based NodeJS, Express web framework and MongoDB",
   "scripts": {
     "start": "node bin/server.js",
     "dev": "cross-env NODE_ENV=development nodemon bin/server.js",
