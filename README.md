@@ -1,6 +1,10 @@
-# api-seed [![JavaScript Style Guide][standardjs-image]][standardjs-url]
+# api-boilerplate
 
-> A seed project for building api server using Express with MongoDB
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][codecov-image]][codecov-url]
+[![JavaScript Style Guide][standardjs-image]][standardjs-url]
+
+> A boilerplate for building api services based NodeJS, Express web framework and MongoDB
 
 ## Features
 
@@ -70,5 +74,9 @@ $ npm test
 
 MIT © [Chun-Kai Wang](https://github.com/chunkai1312)
 
+[travis-image]: https://img.shields.io/travis/chunkai1312/api-seed.svg
+[travis-url]: https://travis-ci.org/chunkai1312/api-seed
+[codecov-image]: https://img.shields.io/codecov/c/github/chunkai1312/api-seed.svg
+[codecov-url]: https://codecov.io/gh/chunkai1312/api-seed
 [standardjs-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standardjs-url]: http://standardjs.com/
