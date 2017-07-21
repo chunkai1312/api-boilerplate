@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import TodoController from '../controllers/todo'
+import TodoController from '../controllers/TodoController'
 
 const wrap = fn => (...args) => fn(...args).catch(args[2])
 const todoController = TodoController()

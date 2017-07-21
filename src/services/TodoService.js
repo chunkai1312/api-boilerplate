@@ -1,4 +1,4 @@
-import TodoRepository from '../repositories/todo'
+import TodoRepository from '../repositories/TodoRepository'
 
 function TodoService (dependencies = { todoRepo: TodoRepository() }) {
   const { todoRepo } = dependencies
