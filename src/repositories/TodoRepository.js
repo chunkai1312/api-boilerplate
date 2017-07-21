@@ -1,34 +1,54 @@
 import Todo from '../models/Todo'
 
-function TodoRepository (dependencies = { Todo }) {
-  const todoRepository = {}
+function TodoRepository (dependencies = { model: Todo }) {
+  const { model: Model } = dependencies
 
-  todoRepository.getTodos = (query) => {
-    return Todo.find(query)
+  const repository = {}
+
+  /**
+   * Find documents.
+   */
+  repository.find = (conditions) => {
+    return Model.find(conditions)
   }
 
-  todoRepository.getTodoById = (id) => {
-    return Todo.findById(id)
+  /**
+   * Find a document by id.
+   */
+  repository.findById = (id) => {
+    return Model.findById(id)
   }
 
-  todoRepository.createTodo = (todo) => {
-    return Todo.create(todo)
+  /**
+   * Save one or more documents.
+   */
+  repository.create = (doc) => {
+    return Model.create(doc)
   }
 
-  todoRepository.updateTodo = (id, doc) => {
-    return Todo.findByIdAndUpdate(id, doc, { new: true })
+  /**
+   * Update a document by id.
+   */
+  repository.update = (id, update) => {
+    return Model.findByIdAndUpdate(id, update, { new: true })
   }
 
-  todoRepository.deleteTodo = (id) => {
-    return Todo.findById(id)
+  /**
+   * Delete a document by id.
+   */
+  repository.delete = (id) => {
+    return Model.findById(id)
       .then(todo => todo ? todo.delete() : null)
   }
 
-  todoRepository.save = (todo) => {
-    return todo.save()
+  /**
+   * Save the document.
+   */
+  repository.save = (doc) => {
+    return doc.save()
   }
 
-  return todoRepository
+  return repository
 }
 
 export default TodoRepository
