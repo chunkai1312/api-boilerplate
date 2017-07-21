@@ -3,23 +3,23 @@ import Todo from '../../../src/models/Todo'
 function TodoRepository (dependencies = { Todo }) {
   const todoRepository = {}
 
-  todoRepository.getTodos = (query) => {
+  todoRepository.find = (query) => {
     return []
   }
 
-  todoRepository.getTodoById = (id) => {
+  todoRepository.findById = (id) => {
     return new Todo({ id })
   }
 
-  todoRepository.createTodo = (todo) => {
+  todoRepository.create = (todo) => {
     return new Todo(todo)
   }
 
-  todoRepository.updateTodo = (id, doc) => {
+  todoRepository.update = (id, doc) => {
     return new Todo(doc)
   }
 
-  todoRepository.deleteTodo = (id) => {
+  todoRepository.delete = (id) => {
     return new Todo({ id, deleted: true })
   }
 
