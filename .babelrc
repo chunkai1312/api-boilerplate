@@ -4,8 +4,6 @@
       "targets": {
         "node": true
       }
-    }],
-    "stage-0"
-  ],
-  "plugins": ["add-module-exports"]
+    }]
+  ]
 }
