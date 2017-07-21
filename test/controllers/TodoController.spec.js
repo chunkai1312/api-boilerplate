@@ -1,8 +1,8 @@
 import httpMocks from 'node-mocks-http'
-import TodoService from '../../src/services/todo'
-import TodoController from '../../src/controllers/todo'
+import TodoService from '../../src/services/TodoService'
+import TodoController from '../../src/controllers/TodoController'
 
-jest.mock('../../src/repositories/todo', () => require('../mocks/repositories/todo'))
+jest.mock('../../src/repositories/TodoRepository', () => require('../__mocks__/repositories/TodoRepository'))
 
 function setup () {
   const todoService = TodoService()

@@ -1,4 +1,4 @@
-import Todo from '../../../src/models/todo'
+import Todo from '../../../src/models/Todo'
 
 function TodoRepository (dependencies = { Todo }) {
   const todoRepository = {}

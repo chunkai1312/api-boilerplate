@@ -1,8 +1,8 @@
-import TodoService from '../../src/services/todo'
-import TodoRepository from '../../src/repositories/todo'
-import Todo from '../../src/models/todo'
+import TodoService from '../../src/services/TodoService'
+import TodoRepository from '../../src/repositories/TodoRepository'
+import Todo from '../../src/models/Todo'
 
-jest.mock('../../src/repositories/todo', () => require('../mocks/repositories/todo'))
+jest.mock('../../src/repositories/TodoRepository', () => require('../__mocks__/repositories/TodoRepository'))
 
 function setup () {
   const todoRepo = TodoRepository()
