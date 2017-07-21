@@ -4,13 +4,13 @@ import TodoService from '../services/TodoService'
 function TodoController (dependencies = { todoService: TodoService() }) {
   const { todoService } = dependencies
 
-  const todoController = {}
+  const controller = {}
 
   /**
    * GET /api/todos
    * Find all todo.
    */
-  todoController.index = async (req, res) => {
+  controller.index = async (req, res) => {
     const todos = await todoService.getTodos()
     res.status(200).json(todos)
   }
@@ -19,7 +19,7 @@ function TodoController (dependencies = { todoService: TodoService() }) {
    * POST /api/todos
    * Create a new todo.
    */
-  todoController.create = async (req, res) => {
+  controller.create = async (req, res) => {
     const todo = await todoService.createTodo(req.body)
     res.status(201).json(todo)
   }
@@ -28,7 +28,7 @@ function TodoController (dependencies = { todoService: TodoService() }) {
    * GET /api/todos/:id
    * Find one todo by ID.
    */
-  todoController.show = async (req, res) => {
+  controller.show = async (req, res) => {
     const todo = await todoService.getTodoById(req.params.id)
     if (!todo) throw error(404)
     res.status(200).json(todo)
@@ -38,7 +38,7 @@ function TodoController (dependencies = { todoService: TodoService() }) {
    * PUT /api/todos/:id
    * Update an existing todo by ID.
    */
-  todoController.update = async (req, res) => {
+  controller.update = async (req, res) => {
     const todo = await todoService.updateTodo(req.params.id, req.body)
     if (!todo) throw error(404)
     res.status(200).json(todo)
@@ -48,13 +48,13 @@ function TodoController (dependencies = { todoService: TodoService() }) {
    * DELETE /api/todos/:id
    * Destroy an existing todo by ID.
    */
-  todoController.destroy = async (req, res) => {
+  controller.destroy = async (req, res) => {
     const todo = await todoService.deleteTodo(req.params.id)
     if (!todo) throw error(404)
     res.status(200).json(todo)
   }
 
-  return todoController
+  return controller
 }
 
 export default TodoController
