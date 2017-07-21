@@ -3,34 +3,49 @@ import TodoRepository from '../repositories/TodoRepository'
 function TodoService (dependencies = { todoRepo: TodoRepository() }) {
   const { todoRepo } = dependencies
 
-  const todoService = {}
+  const service = {}
 
-  todoService.getTodos = async (query) => {
-    const todo = await todoRepo.getTodos(query)
+  /**
+   * Get todos.
+   */
+  service.getTodos = async (conditions) => {
+    const todo = await todoRepo.find(conditions)
     return todo
   }
 
-  todoService.getTodoById = async (id) => {
-    const todo = await todoRepo.getTodoById(id)
+  /**
+   * Get a todo by id.
+   */
+  service.getTodoById = async (id) => {
+    const todo = await todoRepo.findById(id)
     return todo
   }
 
-  todoService.createTodo = async (data) => {
-    const todo = await todoRepo.createTodo(data)
+  /**
+   * Create a todo.
+   */
+  service.createTodo = async (doc) => {
+    const todo = await todoRepo.create(doc)
     return todo
   }
 
-  todoService.updateTodo = async (id, doc) => {
-    const todo = await todoRepo.updateTodo(id, doc)
+  /**
+   * Update a todo by id.
+   */
+  service.updateTodo = async (id, update) => {
+    const todo = await todoRepo.update(id, update)
     return todo
   }
 
-  todoService.deleteTodo = async (id) => {
-    const todo = await todoRepo.deleteTodo(id)
+  /**
+   * Delete a todo by id.
+   */
+  service.deleteTodo = async (id) => {
+    const todo = await todoRepo.delete(id)
     return todo
   }
 
-  return todoService
+  return service
 }
 
 export default TodoService
