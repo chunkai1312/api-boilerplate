@@ -2,6 +2,9 @@ import mongoose, { Schema } from 'mongoose'
 import mongooseHidden from 'mongoose-hidden'
 import mongooseDelete from 'mongoose-delete'
 
+/**
+ * Schema definition.
+ */
 const TodoSchema = new Schema({
   text: { type: String },
   completed: { type: Boolean, default: false }
