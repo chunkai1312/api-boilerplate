@@ -5,7 +5,8 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import helmet from 'helmet'
 import methodOverride from 'method-override'
-import addRequestId from 'express-request-id'
+import requestId from 'express-request-id'
+import responseTime from 'response-time'
 import { compose } from 'compose-middleware'
 import expressWinston from 'express-winston'
 import config from '../config'
@@ -25,7 +26,8 @@ const middlewares = [
   cors(),
   helmet(),
   methodOverride(),
-  addRequestId()
+  requestId(),
+  responseTime()
 ]
 
 export default () => compose(middlewares)
