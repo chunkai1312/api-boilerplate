@@ -8,18 +8,20 @@
 
 ## Features
 
-- ES6/ES2015+ support using [Babel](https://babeljs.io)
-- Use [MongoDB](https://www.mongodb.com/) for the database and [Mongoose](https://github.com/Automattic/mongoose) ODM for schema creation
-- Use [winston](https://github.com/winstonjs/winston) for logging errors and events
-- Use [nodemon](https://github.com/remy/nodemon) for watching and restarting
-- Use [Jest](https://facebook.github.io/jest/) as test framework
+- ES6/ES2015+ support with [Babel](https://babeljs.io)
+- Application framework with [Express](http://expressjs.com)
+- Database object modeling with [Mongoose**](http://mongoosejs.com)
+- Logging library with [Winston](https://github.com/winstonjs/winston)
+- Application watching and restarting use in development mode with [Nodemon](https://github.com/remy/nodemon)
+- Test Framework with [Jest](https://facebook.github.io/jest)
+- Todo API implementation for example
 
 ## Structure
 
 ```
 .
 ├── bin
-│   └── server.js        # entry
+│   └── api              # application entry
 ├── logs                 # logging files
 ├── src
 │   ├── config           # app configurations
@@ -28,11 +30,13 @@
 │   │   ├── config.js    # configuration variables definitions
 │   │   ├── winston.js   # winston logger transport settings
 │   │   └── mongoose.js  # mongoose connection handler
-│   ├── controllers      # api implementations
-|   ├── middlewares      # middleware implementations
+│   ├── controllers      # routing controller implementations
+│   ├── helpers          # helper function implementations
+|   ├── middlewares      # connect/express middleware implementations
 │   ├── models           # database schema definitions
+│   ├── repositories     # repository implementations
 │   ├── routes           # router definitions
-│   ├── servies          # standalone services
+│   ├── servies          # standalone service implementations
 │   └── app.js           # express instance
 ├── test                 # testing scripts
 └── package.json
