@@ -19,7 +19,7 @@ const accessLogger = new winston.Logger({
     }),
     new DailyRotateFile({
       json: true,
-      filename: path.join(config.root, 'logs', 'access'),
+      filename: path.join(config.path.root, 'logs', 'access'),
       datePattern: '-yyyyMMdd.log'
     })
   ]
@@ -34,7 +34,7 @@ const errorLogger = new winston.Logger({
     }),
     new DailyRotateFile({
       json: true,
-      filename: path.join(config.root, 'logs', 'error'),
+      filename: path.join(config.path.root, 'logs', 'error'),
       datePattern: '-yyyyMMdd.log'
     })
   ]

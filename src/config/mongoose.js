@@ -20,5 +20,5 @@ process.on('SIGINT', () => {
   })
 })
 
-const models = glob.sync(`${config.context}/models/*.js`)
+const models = glob.sync(`${config.path.context}/models/*.js`)
 models.forEach(model => require(model))
