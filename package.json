@@ -36,6 +36,7 @@
     "mongoose-delete": "^0.4.0",
     "mongoose-hidden": "^1.4.0",
     "morgan": "^1.8.2",
+    "response-time": "^2.3.2",
     "winston": "^2.3.1",
     "winston-daily-rotate-file": "^1.4.6"
   },
