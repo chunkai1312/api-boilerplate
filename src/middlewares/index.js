@@ -11,7 +11,7 @@ import { compose } from 'compose-middleware'
 import expressWinston from 'express-winston'
 import config from '../config'
 import { accessLogger as winstonInstance } from '../config/winston'
-import errorHandler from './errorhandler'
+import errorHandler from './errorHandler'
 
 const logger = (config.env === 'production')
   ? () => expressWinston.logger({ winstonInstance, dynamicMeta: (req, res) => ({ requestId: req.id }) })
