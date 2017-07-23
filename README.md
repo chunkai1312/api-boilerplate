@@ -10,7 +10,7 @@
 
 - ES6/ES2015+ support with [Babel](https://babeljs.io)
 - Application framework with [Express](http://expressjs.com)
-- Database object modeling with [Mongoose**](http://mongoosejs.com)
+- Database object modeling with [Mongoose](http://mongoosejs.com)
 - Logging library with [Winston](https://github.com/winstonjs/winston)
 - Application watching and restarting use in development mode with [Nodemon](https://github.com/remy/nodemon)
 - Test Framework with [Jest](https://facebook.github.io/jest)
