@@ -1,6 +1,6 @@
 import morgan from 'morgan'
 import compression from 'compression'
-import bodyParser from 'body-parser'
+import { urlencoded, json } from 'body-parser'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import helmet from 'helmet'
@@ -20,8 +20,8 @@ const logger = (config.env === 'production')
 const middlewares = [
   logger(),
   compression(),
-  bodyParser.urlencoded({ extended: false }),
-  bodyParser.json(),
+  urlencoded({ extended: false }),
+  json(),
   cookieParser(),
   cors(),
   helmet(),
