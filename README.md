@@ -16,7 +16,40 @@
 - Test Framework with [Jest](https://facebook.github.io/jest)
 - Todo API implementation for example
 
-## Structure
+## Requirements
+
+* [Node.js](https://nodejs.org) v6+
+* [Yarn](https://yarnpkg.com) or [NPM](https://www.npmjs.com)
+* [MongoDB](https://www.mongodb.com)
+
+## Installation
+
+Clone this repo:
+
+```
+$ git clone https://github.com/chunkai1312/api-boilerplate.git <my-project-name>
+$ cd <my-project-name>
+```
+
+Install dependencies:
+
+```
+$ npm install
+```
+
+## Running the Project
+
+|`yarn <script>`    |Description|
+|-------------------|-----------|
+|`start`            |Runs the application|
+|`dev`              |Runs the application in development mode with Nodemon|
+|`build`            |Builds the project for production|
+|`test`             |Runs unit tests with Jest|
+|`test:watch`       |Runs `test` in watch mode to re-run tests when changed|
+|`test:coverage`    |Runs `test` and generates code coverage report|
+|`lint`             |Lints the project for potential errors|
+
+## Project Structure
 
 ```
 .
@@ -40,38 +73,6 @@
 │   └── app.js           # express instance
 ├── test                 # testing scripts
 └── package.json
-```
-
-## Usage
-
-### Setup
-
-```
-$ npm install
-```
-
-### Developing
-
-```
-$ npm run dev
-```
-
-### Building
-
-```
-$ npm run build
-```
-
-### Running
-
-```
-$ npm start
-```
-
-### Testing
-
-```
-$ npm test
 ```
 
 ## License
