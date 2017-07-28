@@ -20,6 +20,7 @@ describe('TodoController', () => {
   describe('#index()', () => {
     it('should respond 200 with todos', async () => {
       const { todoService } = setup()
+      jest.spyOn(todoService, 'getTodos')
 
       const req = httpMocks.createRequest({
         method: 'GET',
@@ -30,26 +31,34 @@ describe('TodoController', () => {
       const todoController = TodoController({ todoService })
       await todoController.index(req, res)
 
-      expect(res._getStatusCode()).toBe(200)
+      expect(todoService.getTodos).toHaveBeenCalled()
+      expect(res.statusCode).toBe(200)
+      expect(res._isEndCalled()).toBe(true)
       expect(res._isJSON()).toBe(true)
+      expect(res._isUTF8()).toBe(true)
     })
   })
 
   describe('#create()', () => {
     it('should respond 201 with created todo', async () => {
       const { todoService } = setup()
+      jest.spyOn(todoService, 'createTodo')
 
       const req = httpMocks.createRequest({
         method: 'POST',
-        url: '/api/todos'
+        url: '/api/todos',
+        body: { title: 'test' }
       })
       const res = httpMocks.createResponse()
 
       const todoController = TodoController({ todoService })
       await todoController.create(req, res)
 
-      expect(res._getStatusCode()).toBe(201)
+      expect(todoService.createTodo).toHaveBeenCalledWith(req.body)
+      expect(res.statusCode).toBe(201)
+      expect(res._isEndCalled()).toBe(true)
       expect(res._isJSON()).toBe(true)
+      expect(res._isUTF8()).toBe(true)
     })
   })
 
@@ -68,9 +77,11 @@ describe('TodoController', () => {
       const todoController = TodoController({ todoService })
       await todoController.show(req, res)
 
-      expect(todoService.getTodoById).toHaveBeenCalledWith('123')
-      expect(res._getStatusCode()).toBe(200)
+      expect(todoService.getTodoById).toHaveBeenCalledWith(req.params.id)
+      expect(res.statusCode).toBe(200)
+      expect(res._isEndCalled()).toBe(true)
       expect(res._isJSON()).toBe(true)
+      expect(res._isUTF8()).toBe(true)
     })
   })
 
@@ -90,9 +101,11 @@ describe('TodoController', () => {
       const todoController = TodoController({ todoService })
       await todoController.update(req, res)
 
-      expect(todoService.updateTodo).toHaveBeenCalledWith('123', req.body)
-      expect(res._getStatusCode()).toBe(200)
+      expect(todoService.updateTodo).toHaveBeenCalledWith(req.params.id, req.body)
+      expect(res.statusCode).toBe(200)
+      expect(res._isEndCalled()).toBe(true)
       expect(res._isJSON()).toBe(true)
+      expect(res._isUTF8()).toBe(true)
     })
   })
 
@@ -111,9 +124,11 @@ describe('TodoController', () => {
       const todoController = TodoController({ todoService })
       await todoController.destroy(req, res)
 
-      expect(todoService.deleteTodo).toHaveBeenCalledWith('123')
-      expect(res._getStatusCode()).toBe(200)
+      expect(todoService.deleteTodo).toHaveBeenCalledWith(req.params.id)
+      expect(res.statusCode).toBe(200)
+      expect(res._isEndCalled()).toBe(true)
       expect(res._isJSON()).toBe(true)
+      expect(res._isUTF8()).toBe(true)
     })
   })
 })
