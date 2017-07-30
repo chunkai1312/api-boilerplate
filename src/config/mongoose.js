@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-import glob from 'glob'
 import config from '../config'
 
 // mongoose.set('debug', true)
@@ -19,6 +18,3 @@ process.on('SIGINT', () => {
     process.exit(0)
   })
 })
-
-const models = glob.sync(`${config.path.context}/models/*.js`)
-models.forEach(model => require(model))
