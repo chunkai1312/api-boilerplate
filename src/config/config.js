@@ -4,8 +4,8 @@ export default {
   env: process.env.NODE_ENV,
 
   path: {
-    root: path.normalize(`${__dirname}/../..`),
-    context: path.normalize(`${__dirname}/..`)
+    root: path.resolve(__dirname, '../..'),
+    app: path.resolve(__dirname, '../app')
   },
 
   server: {
@@ -15,6 +15,18 @@ export default {
 
   mongoDB: {
     uri: process.env.MONGODB_URI,
-    options: {}
-  }
+    options: {
+      // useMongoClient: true
+    }
+  },
+
+  autoload: [
+    'models',
+    'repositories',
+    'services',
+    'middlewares',
+    'controllers',
+    'routes',
+    'index.js'
+  ]
 }

@@ -1,7 +1,5 @@
-import Todo from '../models/Todo'
-
-function TodoRepository (dependencies = { model: Todo }) {
-  const { model: Model } = dependencies
+export default app => {
+  const { Todo: Model } = app.models
 
   const repository = {}
 
@@ -50,5 +48,3 @@ function TodoRepository (dependencies = { model: Todo }) {
 
   return repository
 }
-
-export default TodoRepository

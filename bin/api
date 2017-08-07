@@ -6,10 +6,15 @@ const env = process.env.NODE_ENV || 'development'
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 8080
 
-const server = (env === 'development')
-  ? require('babel-register') && require('../src/app').default
-  : require('../dist/app').default
+const app = (env === 'development')
+  ? require('babel-register') && require('../src')
+  : require('../dist')
 
-server.listen(port, host, function () {
-  console.log('Server is running on %s:%d, in %s mode', host, port, env)
+const { server, database } = app
+const { logger } = server
+
+database.connect(() => {
+  server.listen(port, host, function () {
+    logger.verbose('Server is running on %s:%d, in %s mode', host, port, env)
+  })
 })

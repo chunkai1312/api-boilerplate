@@ -1,8 +1,7 @@
 import error from 'http-errors'
-import TodoService from '../services/TodoService'
 
-function TodoController (dependencies = { todoService: TodoService() }) {
-  const { todoService } = dependencies
+export default app => {
+  const todoService = app.services.todo
 
   const controller = {}
 
@@ -56,5 +55,3 @@ function TodoController (dependencies = { todoService: TodoService() }) {
 
   return controller
 }
-
-export default TodoController

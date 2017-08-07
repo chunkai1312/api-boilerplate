@@ -1,7 +1,5 @@
-import TodoRepository from '../repositories/TodoRepository'
-
-function TodoService (dependencies = { todoRepo: TodoRepository() }) {
-  const { todoRepo } = dependencies
+export default app => {
+  const todoRepo = app.repositories.todo
 
   const service = {}
 
@@ -47,5 +45,3 @@ function TodoService (dependencies = { todoRepo: TodoRepository() }) {
 
   return service
 }
-
-export default TodoService
