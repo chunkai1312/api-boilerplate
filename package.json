@@ -31,7 +31,7 @@
     "http-errors-express": "^3.1.0",
     "lodash": "^4.17.4",
     "method-override": "^2.3.9",
-    "mongoose": "^4.11.5",
+    "mongoose": "4.10.8",
     "mongoose-delete": "^0.4.0",
     "mongoose-hidden": "^1.4.0",
     "morgan": "^1.8.2",
