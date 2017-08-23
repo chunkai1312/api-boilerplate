@@ -54,9 +54,6 @@ describe('app.controllers.api.token', () => {
 
       expect(res._getStatusCode()).toBe(200)
       expect(res._isJSON()).toBe(true)
-
-      const data = JSON.parse(res._getData())
-      // expect(data.name).toBe('test')
     })
   })
 
