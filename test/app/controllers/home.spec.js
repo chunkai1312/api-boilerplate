@@ -1,7 +1,7 @@
 import httpMocks from 'node-mocks-http'
 import app from '../../mocks/app'
 
-describe('app.controllers.api.token', () => {
+describe('app.controllers.home', () => {
   const homeController = app.controllers.home
 
   describe('#index()', () => {
