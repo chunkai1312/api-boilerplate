@@ -6,13 +6,14 @@ module.exports = {
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules/',
-    '<rootDir>/test',
+    '<rootDir>/test/',
     '<rootDir>/src/bootstrap/',
     '<rootDir>/src/config/',
-    '<rootDir>/src/database',
-    '<rootDir>/src/lib',
+    '<rootDir>/src/database/',
+    '<rootDir>/src/lib/',
+    '<rootDir>/src/app/repositories/',
     '<rootDir>/src/app/middlewares/index.js',
-    '<rootDir>/src/app/middlewares/errors/index.js'
+    '<rootDir>/src/app/middlewares/errorhandlers/index.js'
   ],
   coverageReporters: ['text', 'text-summary']
 }
