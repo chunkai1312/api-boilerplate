@@ -3,7 +3,7 @@ import app from '../../mocks/app'
 
 jest.mock('../../../src/app/repositories/todo')
 
-describe('app.controllers.api.token', () => {
+describe('app.controllers.todo', () => {
   const todoController = app.controllers.todo
 
   describe('#index()', () => {
