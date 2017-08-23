@@ -6,10 +6,7 @@ describe('app.controllers.api.token', () => {
 
   describe('#index()', () => {
     it('should respond 200', async () => {
-      const req = httpMocks.createRequest({
-        method: 'GET',
-        url: '/'
-      })
+      const req = httpMocks.createRequest({ method: 'GET', url: '/' })
       const res = httpMocks.createResponse()
 
       await homeController.index(req, res)
