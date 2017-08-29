@@ -31,11 +31,12 @@
     "http-errors-express": "^3.1.0",
     "lodash": "^4.17.4",
     "method-override": "^2.3.9",
-    "mongoose": "4.10.8",
     "mongoose-delete": "^0.4.0",
     "mongoose-hidden": "^1.4.0",
     "morgan": "^1.8.2",
+    "mysql2": "^1.4.2",
     "response-time": "^2.3.2",
+    "sequelize": "^4.7.5",
     "winston": "^2.3.1",
     "winston-daily-rotate-file": "^1.4.6"
   },
