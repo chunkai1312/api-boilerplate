@@ -13,8 +13,8 @@ const app = (env === 'development')
 const { server, database } = app
 const { logger } = server
 
-database.connect(() => {
-  server.listen(port, host, function () {
+database.sequelize.sync().then(() => {
+  server.listen(port, host, () => {
     logger.verbose('Server is running on %s:%d, in %s mode', host, port, env)
   })
 })

@@ -13,15 +13,12 @@ export default {
     port: process.env.PORT
   },
 
-  mongoDB: {
-    uri: process.env.MONGODB_URI,
-    options: {
-      // useMongoClient: true
-    }
+  sequelize: {
+    uri: process.env.MYSQL_URI,
+    options: {}
   },
 
   autoload: [
-    'models',
     'repositories',
     'services',
     'middlewares',

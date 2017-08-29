@@ -1,25 +1,29 @@
-import mongoose from 'mongoose'
-import logger from '../lib/logger'
+import fs from 'fs'
+import path from 'path'
+import Sequelize from 'sequelize'
 import config from '../config'
 
-// mongoose.set('debug', true)
+const sequelize = new Sequelize(config.sequelize.uri, config.sequelize.options)
 
-mongoose.Promise = global.Promise
+const db = {
+  sequelize,
+  Sequelize,
+  models: {}
+}
 
-mongoose.connection
-  .on('connected', () => logger.verbose(`Mongoose default connection open to ${config.mongoDB.uri}`))
-  .on('disconnected', () => logger.verbose('Mongoose default connection disconnected'))
-  .on('error', (err) => logger.verbose(`Mongoose default connection error: ${err}`))
+const models = path.join(config.path.app, 'models')
 
-process.on('SIGINT', () => {
-  mongoose.connection.close(() => {
-    logger.verbose('Mongoose connection disconnected through app termination')
-    process.exit(0)
+fs
+  .readdirSync(models)
+  .forEach(file => {
+    const model = sequelize.import(path.join(models, file))
+    db.models[model.name] = model
   })
+
+Object.keys(db).forEach(function (modelName) {
+  if ('associate' in db[modelName]) {
+    db.models[modelName].associate(db)
+  }
 })
 
-export default {
-  connect: (cb) => {
-    mongoose.connect(config.mongoDB.uri, config.mongoDB.options, cb)
-  }
-}
+export default db

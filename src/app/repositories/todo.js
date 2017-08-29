@@ -7,7 +7,7 @@ export default app => {
    * Find documents.
    */
   repository.find = (conditions) => {
-    return Model.find(conditions)
+    return Model.findAll(conditions)
   }
 
   /**
@@ -28,7 +28,8 @@ export default app => {
    * Update a document by id.
    */
   repository.update = (id, update) => {
-    return Model.findByIdAndUpdate(id, update, { new: true })
+    return Model.findById(id)
+      .then(doc => doc ? doc.update(update) : null)
   }
 
   /**
@@ -36,7 +37,7 @@ export default app => {
    */
   repository.delete = (id) => {
     return Model.findById(id)
-      .then(todo => todo ? todo.delete() : null)
+      .then(doc => doc ? doc.destroy() : null)
   }
 
   /**
