@@ -27,7 +27,7 @@
 Clone this repo:
 
 ```
-$ git clone https://github.com/chunkai1312/api-boilerplate.git <my-project-name>
+$ git clone https://github.com/punwave/punserve.git <my-project-name>
 $ cd <my-project-name>
 ```
 
@@ -85,9 +85,9 @@ $ npm install
 
 MIT © [Chun-Kai Wang](https://github.com/chunkai1312)
 
-[travis-image]: https://img.shields.io/travis/chunkai1312/api-boilerplate.svg
-[travis-url]: https://travis-ci.org/chunkai1312/api-boilerplate
-[codecov-image]: https://img.shields.io/codecov/c/github/chunkai1312/api-boilerplate.svg
-[codecov-url]: https://codecov.io/gh/chunkai1312/api-boilerplate
+[travis-image]: https://img.shields.io/travis/punwave/punserve.svg
+[travis-url]: https://travis-ci.org/punwave/punserve
+[codecov-image]: https://img.shields.io/codecov/c/github/punwave/punserve.svg
+[codecov-url]: https://codecov.io/gh/punwave/punserve
 [standardjs-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standardjs-url]: http://standardjs.com/
