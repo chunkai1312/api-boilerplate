@@ -20,9 +20,9 @@ fs
     db.models[model.name] = model
   })
 
-Object.keys(db).forEach(function (modelName) {
-  if ('associate' in db[modelName]) {
-    db.models[modelName].associate(db)
+Object.keys(db.models).forEach(modelName => {
+  if ('associate' in db.models[modelName]) {
+    db.models[modelName].associate(db.models)
   }
 })
 
