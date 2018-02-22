@@ -1,4 +1,4 @@
-# punserve
+# api-boilerplate
 
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][codecov-image]][codecov-url]
